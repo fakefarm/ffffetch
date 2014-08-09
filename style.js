@@ -1,4 +1,5 @@
 $(document).ready(function(){
-  $(this).click().hide();
-  
+  $('img').click(function(){
+    $(this).hide();
+  }); 
 });
