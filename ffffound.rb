@@ -45,10 +45,11 @@ class FFFFound
       img = "<img src=\"" + _file + "\" >"
       @images << img
     end
+    @images = @images.uniq
   end
   
   def make_file  
-    file_name = Time.now.strftime("%F.html")
+    file_name = 'ffffiles.html' 
     File.open(file_name, 'w+') do |file|
       file.write "<html><head>"
       file.write "<link rel='stylesheet' href='style.css'>"
