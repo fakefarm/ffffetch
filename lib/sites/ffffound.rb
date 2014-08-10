@@ -1,5 +1,3 @@
-require 'launchy'
-
 class FFFFound
   attr_accessor :file, :item_string, :item_array, :images
   
@@ -9,7 +7,6 @@ class FFFFound
     clean_feed
     coerce_feed
     compile_images
-    make_file
     puts 'FFFFetched!'
   end
 
@@ -47,29 +44,4 @@ class FFFFound
     end
     @images = @images.uniq
   end
-  
-  def make_file  
-    file_name = 'ffffiles.html' 
-    File.open(file_name, 'w+') do |file|
-      file.write "<html><head>"
-      file.write "<link rel='stylesheet' href='style.css'>"
-      file.write "<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>"
-      file.write "<script src='style.js'></script>"
-      file.write "</head>"
-
-      file.puts ""
-      images.each do |i|
-        file.write "<div class='wrapper'>"
-        file.write i
-        file.write "<p class='like'>like</p>"
-        file.write "</div>"
-        file.puts ""
-      end
-      file.puts ""
-      file.write "</body></html>"
-    end
-    Launchy.open(Dir.pwd + "/" + file_name)
-  end
 end
-
-FFFFound.new
