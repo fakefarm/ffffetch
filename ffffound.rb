@@ -59,7 +59,10 @@ class FFFFound
 
       file.puts ""
       images.each do |i|
+        file.write "<div class='wrapper'>"
         file.write i
+        file.write "<p class='like'>like</p>"
+        file.write "</div>"
         file.puts ""
       end
       file.puts ""

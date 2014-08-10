@@ -2,6 +2,13 @@ body {
     width: 90%;
     margin: 0 auto;
 }
+.wrapper {
+  float: left;
+}
 img {
     height: 430px;
+}
+
+.like:hover {
+  background: #eee;
 }
