@@ -5,11 +5,11 @@ require_relative 'write'
 class Application
 
   def initialize
-    get_ffffound
+    add_ffffound_to_file
   end
 
   def open
-    file_name = 'ffffiles.html' 
+    file_name = '../views/ffffiles.html' 
     Launch.open(Dir.pwd + "/files" + file_name)
   end
 
@@ -18,8 +18,15 @@ class Application
     f.images 
   end
 
-  def write file
+  def write_found images
     w = Write.new
+    w.make_file images
     # TODO - write fffound.
   end
+
+  def add_ffffound_to_file
+    images = get_ffffound
+    write_found images
+  end
+
 end

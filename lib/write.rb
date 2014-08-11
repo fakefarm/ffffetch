@@ -1,7 +1,7 @@
 class Write
 
-  def make_file  
-    file_name = 'ffffiles.html' 
+  def make_file images 
+    file_name = 'views/ffffiles.html' 
 
     File.open(file_name, 'w+') do |file|
       file.write "<html><head>"

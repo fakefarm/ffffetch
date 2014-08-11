@@ -1,4 +1,6 @@
-class FFFFound
+require_relative 'site'
+
+class FFFFound < Site
   attr_accessor :file, :item_string, :item_array, :images
   
   def initialize
@@ -20,18 +22,6 @@ class FFFFound
 
   def coerce_feed
     @item_array = @item_string.split("media:content url=")[1..-1]
-  end
-
-  def ext(item)
-    if item.include? 'jpg'
-      'jpg'
-    elsif item.include? 'png'
-      'png'
-    elsif item.include? 'gif'
-      'gif'
-    else
-      ''
-    end
   end
 
   def compile_images
