@@ -1,4 +1,4 @@
-class Site
+module FileHelper
 
   def ext(item)
     if item.include? 'jpg'

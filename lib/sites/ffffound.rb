@@ -1,16 +1,26 @@
-require_relative 'site'
+require_relative 'file_helper'
 
-class FFFFound < Site
-  attr_accessor :file, :item_string, :item_array, :images
+class FFFFound 
+  include FileHelper
   
   def initialize
     @images = []
+    get_images
+    puts 'FFFFetched!'
+  end
+
+  def get_images
     get_feed
     clean_feed
     coerce_feed
     compile_images
-    puts 'FFFFetched!'
   end
+
+  def images
+    @images
+  end
+
+private
 
   def get_feed
     @file = `curl 'http://feeds.feedburner.com/ffffound/everyone'`
