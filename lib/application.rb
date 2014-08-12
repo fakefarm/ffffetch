@@ -27,7 +27,6 @@ class Application
   def write_found images
     w = Write.new
     w.make_file images
-    # TODO - write fffound.
   end
 
 end
